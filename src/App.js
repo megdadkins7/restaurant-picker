@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect, useCallback } from'react';
+
+//components
+import RestaurantList from './components/RestaurantList'
+import RestaurantPicker from './components/RestaurantPicker'
+
+//data
+import { restaurants } from './data'
+
+//styles
+import GlobalStyles from './styles/GlobalStyles'
 
 function App() {
+  const [restaurant, setRestaurant] = useState('')
+
+  const getRestaurant = () => {
+    const restaurantNum = Math.floor(Math.random() * restaurants.length)
+    const randomRestaurant = restaurants[restaurantNum]
+    setRestaurant(randomRestaurant.name)
+  }
+
+  useEffect(() => {
+    getRestaurant()
+  }, [])
+
+  const handleClick = useCallback(event => {
+    getRestaurant()
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyles />
+      <RestaurantPicker restaurant={restaurant} getRestaurant={handleClick} />
+      <RestaurantList restaurants={restaurants} />
+    </>
   );
 }
 
