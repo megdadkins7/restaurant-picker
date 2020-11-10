@@ -2,106 +2,127 @@ export const restaurants = [
   {
     id: 'wurstbar',
     name: 'Wurstbar',
-    type: 'sausage bar',
+    type: 'sausage',
+    visited: true,
   },
   {
     id: 'porta',
     name: 'Porta',
-    type: 'pizza'
+    type: 'pizza',
+    visited: true,
   },
   {
     id: 'aniRamen',
     name: 'Ani Ramen',
-    type: 'ramen'
+    type: 'ramen',
+    visited: true,
   },
   {
     id: 'surfCity',
     name: 'Surf City',
-    type: 'seafood'
+    type: 'seafood',
+    visited: true,
   },
   {
     id: 'zeppelinHall',
     name: 'Zeppelin Hall',
-    type: 'barbeque'
+    type: 'barbeque',
+    visited: true,
   },
   {
     id: 'gringos',
     name: 'Gringos',
-    type: 'tacos'
+    type: 'mexican',
+    visited: true,
   },
   {
     id: 'hudsonHound',
     name: 'Hudon Hound',
-    type: 'irish'
+    type: 'irish',
+    visited: false,
   },
   {
     id: 'loFi',
     name: 'Lo Fi',
-    type: 'pizza'
+    type: 'pizza',
+    visited: true,
   },
   {
     id: 'theBoil',
     name: 'The Boil',
-    type: 'seafood'
+    type: 'seafood',
+    visited: true,
   },
   {
     id: 'hardGrove',
     name: 'Hard Grove',
-    type: 'cuban'
+    type: 'steakhouse',
+    visited: true,
   },
   {
     id: 'hamiltonPork',
     name: 'Hamilton Pork',
-    type: 'barbeque'
+    type: 'barbeque',
+    visited: true,
   },
   {
     id: 'leftBank',
     name: 'Left Bank',
-    type: 'burgers'
+    type: 'burgers',
+    visited: true,
   },
   {
-    id: 'dieselAndDukes',
-    name: 'Diesel And Dukes',
-    type: 'burger'
+    id: 'dieselAndDuke',
+    name: 'Diesel And Duke',
+    type: 'burgers',
+    visited: true,
   },
   {
     id: 'senHai',
     name: 'Sen Hai',
-    type: 'chinese'
+    type: 'chinese',
+    visited: true,
   },
   {
     id: 'cloveGarden',
     name: 'Clove Garden',
-    type: 'indian'
+    type: 'indian',
+    visited: true,
   },
   {
     id: 'southHouse',
     name: 'South House',
-    type: 'steakhouse'
+    type: 'steakhouse',
+    visited: true,
   },
   {
     id: 'theAshford',
     name: 'The Ashford',
-    type: 'american'
+    type: 'american',
+    visited: true,
   },
   {
     id: 'taqueria',
     name: 'Taqueria',
-    type: 'mexican'
+    type: 'mexican',
+    visited: true,
   },
   {
     id: 'tacoria',
     name: 'Tacoria',
-    type: 'tacos'
+    type: 'mexican',
+    visited: true,
   },
   {
     id: 'graceOMalleys',
     name: 'Grace OMalleys',
-    type: 'irish'
+    type: 'irish',
+    visited: false,
   },
   {
     id: 'tonyBaloneys',
     name: 'Tony Baloneys',
-    type: 'pizza'
+    type: 'pizza',
+    visited: true,
   }
 ]

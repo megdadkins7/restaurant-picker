@@ -2,14 +2,41 @@ import React from 'react';
 import styled from 'styled-components'
 
 const StyledRestaurantPicker = styled.div`
-  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30px 0 10px 0;
+  text-align: center;
+  .RestaurantName {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: #283044;
+    margin-bottom: 10px;
+  }
+  .EatButton {
+    margin: 20px 0;
+    padding: 25px 80px;
+    cursor: pointer;
+    outline: none;
+    border: 4px solid #F15656;
+    border-radius: 60px;
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: #F15656;
+    color: #fff;
+  }
+  .EatButton:hover {
+    background: #F36868;
+  }
 `;
 
 export default function RestaurantPicker({ getRestaurant, restaurant }) {
   return (
     <StyledRestaurantPicker>
-      <div>You're going to {restaurant} </div>
-      <button onClick={getRestaurant}>Eat It!</button>
+      <div className='RestaurantName'>You're going to {restaurant} </div>
+      <button className='EatButton' onClick={getRestaurant}>Eat It!</button>
     </StyledRestaurantPicker>
   )
 }

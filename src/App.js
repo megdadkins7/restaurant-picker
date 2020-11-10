@@ -3,6 +3,7 @@ import { useState, useEffect, useCallback } from'react';
 //components
 import RestaurantList from './components/RestaurantList'
 import RestaurantPicker from './components/RestaurantPicker'
+import FilterList from './components/FilterList'
 
 //data
 import { restaurants } from './data'
@@ -11,7 +12,10 @@ import { restaurants } from './data'
 import GlobalStyles from './styles/GlobalStyles'
 
 function App() {
-  const [restaurant, setRestaurant] = useState('')
+  const [restaurant, setRestaurant] = useState('');
+  const [activeFilters, setActiveFilters] = useState({
+    type: '',
+  })
 
   const getRestaurant = () => {
     const restaurantNum = Math.floor(Math.random() * restaurants.length)
@@ -27,11 +31,19 @@ function App() {
     getRestaurant()
   }, [])
 
+  const handleOnFiltersChange = partialFilters => {
+    setActiveFilters(state => ({
+      ...state,
+      ...partialFilters
+    }))
+  }
+
   return (
     <>
       <GlobalStyles />
       <RestaurantPicker restaurant={restaurant} getRestaurant={handleClick} />
-      <RestaurantList restaurants={restaurants} />
+      <FilterList onFiltersChange={handleOnFiltersChange} />
+      <RestaurantList restaurants={restaurants} filters={activeFilters} />
     </>
   );
 }
