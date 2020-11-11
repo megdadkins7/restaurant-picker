@@ -6,17 +6,17 @@ const StyledRestaurantPicker = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 30px 0 10px 0;
+  margin: 10px 0;
   text-align: center;
   .RestaurantName {
-    font-size: 40px;
+    font-size: 35px;
     text-transform: uppercase;
     color: #283044;
     margin-bottom: 10px;
   }
   .EatButton {
-    margin: 20px 0;
-    padding: 25px 80px;
+    margin: 10px 0;
+    padding: 15px 70px;
     cursor: pointer;
     outline: none;
     border: 4px solid #F15656;

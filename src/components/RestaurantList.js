@@ -13,10 +13,10 @@ const StyledRestaurantList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 1px solid #283044;
+  border: ${prop => prop.visited ? '1px solid #283044' : '2px solid #F36868'};
   width: 200px;
   height: 200px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-right: 10px;
   color: #283044;
   .RestaurantName {
@@ -60,9 +60,12 @@ export default function RestaurantList({ restaurants, filters }) {
   return (
     <StyledRestaurantView>
       {visibleRestaurants.map(restaurant => (
-        <StyledRestaurantList key={restaurant.id}>
+        <StyledRestaurantList visited={restaurant.visited} key={restaurant.id}>
         <div className='RestaurantName'>{restaurant.name}</div>
         <div className='RestaurantType'>{restaurant.type}</div>
+        <div className='RestaurantType'>{restaurant.location}</div>
+        <div className='RestaurantType'>{restaurant.alcohol}</div>
+        <div className='RestaurantType'>{restaurant.price}</div>
         </StyledRestaurantList>
       ))}
     </StyledRestaurantView>
