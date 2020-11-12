@@ -1,5 +1,14 @@
 export const restaurants = [
   {
+    id: 'dieselAndDuke',
+    name: 'Diesel And Duke',
+    type: 'burgers',
+    visited: true,
+    location: 'take-out',
+    alcohol: 'none',
+    price: '$'
+  },
+  {
     id: 'wurstbar',
     name: 'Wurstbar',
     type: 'sausage',
@@ -106,15 +115,6 @@ export const restaurants = [
     location: 'dine-in',
     alcohol: 'beer',
     price: '$$$'
-  },
-  {
-    id: 'dieselAndDuke',
-    name: 'Diesel And Duke',
-    type: 'burgers',
-    visited: true,
-    location: 'take-out',
-    alcohol: 'none',
-    price: '$'
   },
   {
     id: 'senHai',

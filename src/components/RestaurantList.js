@@ -6,6 +6,7 @@ const StyledRestaurantView = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 `;
 
 const StyledRestaurantList = styled.div`
@@ -13,12 +14,12 @@ const StyledRestaurantList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: ${prop => prop.visited ? '1px solid #283044' : '2px solid #F36868'};
+  border: ${prop => prop.visited ? '1px solid #283044' : '2px solid #F15656'};
   width: 200px;
   height: 200px;
   margin-top: 20px;
   margin-right: 10px;
-  color: #283044;
+  color: ${prop => prop.visited ? '#283044' : '#F15656'};
   .RestaurantName {
     font-size: 20px;
     font-weight: 600;
@@ -30,33 +31,7 @@ const StyledRestaurantList = styled.div`
   }
 `;
 
-export default function RestaurantList({ restaurants, filters }) {
-  const getActiveFilterCount = filters => {
-    return Object.keys(filters).reduce((total, filterKey) => {
-      return filters[filterKey].length > 0 ? total + 1 : total;
-    }, 0)
-  }
-
-  const getFilteredList = (list, filters) => {
-    const activeFilterCount = getActiveFilterCount(filters);
-    if(activeFilterCount === 0) {
-      return restaurants
-    }
-    return list.filter(restaurant => {
-      const matchCount = Object.keys(filters).reduce((total, filterKey) => {
-        const haveMatch = filters[filterKey].some(r => restaurant[filterKey] === null ? false : restaurant[filterKey].includes(r));
-        if(haveMatch) {
-          return total + 1
-        } else {
-          return total
-        }
-      }, 0);
-      return matchCount === activeFilterCount
-    });
-  };
-
-  const visibleRestaurants = getFilteredList(restaurants, filters)
-
+export default function RestaurantList({ visibleRestaurants }) {
   return (
     <StyledRestaurantView>
       {visibleRestaurants.map(restaurant => (

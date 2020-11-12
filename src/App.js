@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from'react';
+import { useState, useEffect } from'react';
 
 //components
 import RestaurantList from './components/RestaurantList'
@@ -15,21 +15,7 @@ function App() {
   const [restaurant, setRestaurant] = useState('');
   const [activeFilters, setActiveFilters] = useState({
     type: '',
-  })
-
-  const getRestaurant = () => {
-    const restaurantNum = Math.floor(Math.random() * restaurants.length)
-    const randomRestaurant = restaurants[restaurantNum]
-    setRestaurant(randomRestaurant.name)
-  }
-
-  useEffect(() => {
-    getRestaurant()
-  }, [])
-
-  const handleClick = useCallback(event => {
-    getRestaurant()
-  }, [])
+  });
 
   const handleOnFiltersChange = partialFilters => {
     setActiveFilters(state => ({
@@ -38,12 +24,48 @@ function App() {
     }))
   }
 
+  const getActiveFilterCount = activeFilters => {
+    return Object.keys(activeFilters).reduce((total, filterKey) => {
+      return activeFilters[filterKey].length > 0 ? total + 1 : total;
+    }, 0)
+  }
+
+  const getFilteredList = (list, activeFilters) => {
+    const activeFilterCount = getActiveFilterCount(activeFilters);
+    if(activeFilterCount === 0) {
+      return restaurants
+    }
+    return list.filter(restaurant => {
+      const matchCount = Object.keys(activeFilters).reduce((total, filterKey) => {
+        const haveMatch = activeFilters[filterKey].some(r => restaurant[filterKey] === null ? false : restaurant[filterKey].includes(r));
+        if(haveMatch) {
+          return total + 1
+        } else {
+          return total
+        }
+      }, 0);
+      return matchCount === activeFilterCount
+    });
+  };
+
+  const visibleRestaurants = getFilteredList(restaurants, activeFilters)
+
+  const getRestaurant = () => {
+    const restaurantNum = Math.floor(Math.random() * visibleRestaurants.length)
+    const randomRestaurant = visibleRestaurants[restaurantNum]
+    setRestaurant(randomRestaurant.name)
+  }
+
+  useEffect(() => {
+    getRestaurant()
+  }, [])
+
   return (
     <>
       <GlobalStyles />
-      <RestaurantPicker restaurant={restaurant} getRestaurant={handleClick} />
-      <FilterList onFiltersChange={handleOnFiltersChange} />
-      <RestaurantList restaurants={restaurants} filters={activeFilters} />
+      <RestaurantPicker restaurant={restaurant} getRestaurant={getRestaurant} />
+      <FilterList onFiltersChange={handleOnFiltersChange} restaurants={restaurants} />
+      <RestaurantList visibleRestaurants={visibleRestaurants} />
     </>
   );
 }

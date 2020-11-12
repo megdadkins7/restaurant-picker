@@ -62,6 +62,12 @@ export default function FilterList({ onFiltersChange }) {
   const alcoholCategories = restaurants.map(restaurant => restaurant.alcohol).filter(
     uniqueTypes
   );
+  const priceCategories = restaurants.map(restaurant => restaurant.price).filter(
+    uniqueTypes
+  );
+  const visitedCategories = restaurants.map(restaurant => restaurant.visited).filter(
+    uniqueTypes
+  );
   
   return (
     <>
@@ -82,14 +88,7 @@ export default function FilterList({ onFiltersChange }) {
         ))
       }
       </div>
-      
-      </StyledFilterList>
-    </>
-  )
-}
-
-/*
-<div className='Container'>
+      <div className='Container'>
       {
         locationCategories.map((location, i) => (
           <div key={`${location}${i}`}>
@@ -97,26 +96,8 @@ export default function FilterList({ onFiltersChange }) {
               type='checkbox' 
               name='location' 
               value={location}
-              checked={locationFilter.includes(location)}
-              onChange={handleOnLocationChange}
             />
             <label htmlFor='location'>{location}</label>
-          </div>
-        ))
-      }
-      </div>
- <div className='Container'>
-      {
-        locationCategories.map((loc, i) => (
-          <div key={`${loc}${i}`}>
-            <input 
-              type='checkbox' 
-              name='type' 
-              value={loc}
-              checked={locationFilter.includes(loc)}
-              onChange={handleOnLocationChange}
-            />
-            <label htmlFor='type'>{loc}</label>
           </div>
         ))
       }
@@ -127,14 +108,43 @@ export default function FilterList({ onFiltersChange }) {
           <div key={`${alcohol}${i}`}>
             <input 
               type='checkbox' 
-              name='type' 
+              name='alcohol' 
               value={alcohol}
-              checked={alcoholFilter.includes(alcohol)}
-              onChange={handleOnAlcoholChange}
             />
-            <label htmlFor='type'>{alcohol}</label>
+            <label htmlFor='alcohol'>{alcohol}</label>
           </div>
         ))
       }
       </div>
-*/
+      <div className='Container'>
+        {
+          priceCategories.map((price, i) => (
+            <div key={`${price}${i}`}>
+              <input 
+                type='checkbox'
+                name='price'
+                value={price}
+              />
+              <label htmlFor='price'>{price}</label>
+            </div>
+          ))
+        }
+      </div>
+      <div className='Container'>
+        {
+          visitedCategories.map((visited, i) => (
+            <div key={`${visited}${i}`}>
+              <input 
+                type='checkbox'
+                name='visited'
+                value={visited}
+              />
+              <label htmlFor='visited'>{visited ? 'visited' : 'never been'}</label>
+            </div>
+          ))
+        }
+      </div>
+      </StyledFilterList>
+    </>
+  )
+}
