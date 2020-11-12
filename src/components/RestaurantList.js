@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
 
+//helper
+import { transformPrice } from '../data'
+
 const StyledRestaurantView = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -32,6 +35,7 @@ const StyledRestaurantList = styled.div`
 `;
 
 export default function RestaurantList({ visibleRestaurants }) {
+
   return (
     <StyledRestaurantView>
       {visibleRestaurants.map(restaurant => (
@@ -40,7 +44,7 @@ export default function RestaurantList({ visibleRestaurants }) {
         <div className='RestaurantType'>{restaurant.type}</div>
         <div className='RestaurantType'>{restaurant.location}</div>
         <div className='RestaurantType'>{restaurant.alcohol}</div>
-        <div className='RestaurantType'>{restaurant.price}</div>
+        <div className='RestaurantType'>{transformPrice(restaurant.price)}</div>
         </StyledRestaurantList>
       ))}
     </StyledRestaurantView>

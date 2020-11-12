@@ -4,6 +4,9 @@ import styled from 'styled-components'
 //data
 import { restaurants } from '../data'
 
+//helper
+import { transformPrice } from '../data'
+
 const StyledFilterList = styled.div`
  display: grid;
  margin: 10px 40px 0 40px;
@@ -30,11 +33,14 @@ const StyledFilterList = styled.div`
 `;
 
 export default function FilterList({ onFiltersChange }) {
-  const [typeFilter, setTypeFilter] = useState('');
+  const [typeFilter, setTypeFilter] = useState([]);
+  const [locationFilter, setLocationFilter] = useState([]);
+  const [alcoholFilter, setAlcoholFilter] = useState([]);
+  const [priceFilter, setPriceFilter] = useState([]);
 
   useEffect(() => {
-    onFiltersChange({ type: typeFilter })
-  }, [typeFilter])
+    onFiltersChange({ type: typeFilter, location: locationFilter, alcohol: alcoholFilter, price: priceFilter })
+  }, [typeFilter, locationFilter, alcoholFilter, priceFilter])
 
   const handleOnTypeChange = e => {
     const nextTypeFilter = e.target.value
@@ -52,6 +58,55 @@ export default function FilterList({ onFiltersChange }) {
     })
   }
 
+  const handleOnLocationChange = e => {
+    const nextLocationFilter = e.target.value
+
+    setLocationFilter(state => {
+      const currentFilterLoc = state.indexOf(nextLocationFilter)
+      if(currentFilterLoc === -1) {
+        return [...locationFilter, nextLocationFilter]
+      } else {
+        return [
+          ...state.slice(0, currentFilterLoc),
+          ...state.slice(currentFilterLoc + 1, state.length)
+        ]
+      }
+    })
+  }
+
+  const handleOnAlcoholChange = e => {
+    const nextAlcoholFilter = e.target.value
+
+    setAlcoholFilter(state => {
+      const currentFilterLoc = state.indexOf(nextAlcoholFilter)
+      if(currentFilterLoc === -1) {
+        return [...alcoholFilter, nextAlcoholFilter]
+      } else {
+        return [
+          ...state.slice(0, currentFilterLoc),
+          ...state.slice(currentFilterLoc + 1, state.length)
+        ]
+      }
+    })
+  }
+
+  const handleOnPriceChange = e => {
+    const nextPriceFilter = e.target.value
+
+    setPriceFilter(state => {
+      const currentFilterLoc = state.indexOf(nextPriceFilter)
+      if(currentFilterLoc === -1) {
+        return [...priceFilter, nextPriceFilter]
+      } else {
+        return [
+          ...state.slice(0, currentFilterLoc),
+          ...state.slice(currentFilterLoc + 1, state.length)
+        ]
+      }
+    })
+  }
+
+
   const uniqueTypes = (x, i, array) => array.indexOf(x) === i;
   const typeCategories = restaurants.map(restaurant => restaurant.type).filter(
     uniqueTypes
@@ -68,7 +123,7 @@ export default function FilterList({ onFiltersChange }) {
   const visitedCategories = restaurants.map(restaurant => restaurant.visited).filter(
     uniqueTypes
   );
-  
+
   return (
     <>
       <StyledFilterList>
@@ -96,6 +151,8 @@ export default function FilterList({ onFiltersChange }) {
               type='checkbox' 
               name='location' 
               value={location}
+              checked={locationFilter.includes(location)}
+              onChange={handleOnLocationChange}
             />
             <label htmlFor='location'>{location}</label>
           </div>
@@ -110,6 +167,8 @@ export default function FilterList({ onFiltersChange }) {
               type='checkbox' 
               name='alcohol' 
               value={alcohol}
+              checked={alcoholFilter.includes(alcohol)}
+              onChange={handleOnAlcoholChange}
             />
             <label htmlFor='alcohol'>{alcohol}</label>
           </div>
@@ -124,8 +183,10 @@ export default function FilterList({ onFiltersChange }) {
                 type='checkbox'
                 name='price'
                 value={price}
+                checked={priceFilter.includes(price)}
+                onChange={handleOnPriceChange}
               />
-              <label htmlFor='price'>{price}</label>
+              <label htmlFor='price'>{transformPrice(price)}</label>
             </div>
           ))
         }

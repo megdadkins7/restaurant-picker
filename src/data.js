@@ -6,7 +6,7 @@ export const restaurants = [
     visited: true,
     location: 'take-out',
     alcohol: 'none',
-    price: '$'
+    price: 'cheap'
   },
   {
     id: 'wurstbar',
@@ -15,7 +15,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'porta',
@@ -24,7 +24,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'aniRamen',
@@ -33,7 +33,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'surfCity',
@@ -42,7 +42,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'zeppelinHall',
@@ -51,7 +51,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'gringos',
@@ -60,16 +60,16 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'hudsonHound',
-    name: 'Hudon Hound',
+    name: 'Hudson Hound',
     type: 'irish',
     visited: false,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'loFi',
@@ -78,7 +78,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'theBoil',
@@ -87,7 +87,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'hardGrove',
@@ -96,7 +96,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'hamiltonPork',
@@ -105,7 +105,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'leftBank',
@@ -114,7 +114,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'senHai',
@@ -123,7 +123,7 @@ export const restaurants = [
     visited: true,
     location: 'take-out',
     alcohol: 'none',
-    price: '$'
+    price: 'cheap'
   },
   {
     id: 'cloveGarden',
@@ -132,7 +132,7 @@ export const restaurants = [
     visited: true,
     location: 'take-out',
     alcohol: 'none',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'southHouse',
@@ -141,7 +141,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'theAshford',
@@ -150,7 +150,7 @@ export const restaurants = [
     visited: false,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$$'
+    price: 'expensive'
   },
   {
     id: 'taqueria',
@@ -159,7 +159,7 @@ export const restaurants = [
     visited: true,
     location: 'dine-in',
     alcohol: 'beer',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'tacoria',
@@ -168,7 +168,7 @@ export const restaurants = [
     visited: true,
     location: 'take-out',
     alcohol: 'none',
-    price: '$$'
+    price: 'affordable'
   },
   {
     id: 'graceOMalleys',
@@ -177,7 +177,7 @@ export const restaurants = [
     visited: false,
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: '$$$'
+    price: 'average'
   },
   {
     id: 'tonyBaloneys',
@@ -186,6 +186,24 @@ export const restaurants = [
     visited: true,
     location: 'take-out',
     alcohol: 'none',
-    price: '$$'
+    price: 'affordable'
   }
 ]
+
+
+export const transformPrice = (restaurants) => {
+  switch(restaurants) {
+    case 'cheap':
+        return '$';
+        break;
+      case 'affordable':
+        return '$$';
+        break;
+      case 'average':
+        return '$$$';
+        break;
+      case 'expensive':
+        return '$$$$';
+        break;
+  }
+}

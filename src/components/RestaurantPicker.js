@@ -9,7 +9,8 @@ const StyledRestaurantPicker = styled.div`
   margin: 10px 0;
   text-align: center;
   .RestaurantName {
-    font-size: 35px;
+    font-size: 40px;
+    font-weight: 600;
     text-transform: uppercase;
     color: #283044;
     margin-bottom: 10px;

@@ -14,7 +14,10 @@ import GlobalStyles from './styles/GlobalStyles'
 function App() {
   const [restaurant, setRestaurant] = useState('');
   const [activeFilters, setActiveFilters] = useState({
-    type: '',
+    type: [],
+    location: [],
+    alcohol: [],
+    price: [],
   });
 
   const handleOnFiltersChange = partialFilters => {
