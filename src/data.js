@@ -3,7 +3,7 @@ export const restaurants = [
     id: 'dieselAndDuke',
     name: 'Diesel And Duke',
     type: 'burgers',
-    visited: true,
+    visited: 'true',
     location: 'take-out',
     alcohol: 'none',
     price: 'cheap'
@@ -12,7 +12,7 @@ export const restaurants = [
     id: 'wurstbar',
     name: 'Wurstbar',
     type: 'sausage',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -21,7 +21,7 @@ export const restaurants = [
     id: 'porta',
     name: 'Porta',
     type: 'pizza',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -30,7 +30,7 @@ export const restaurants = [
     id: 'aniRamen',
     name: 'Ani Ramen',
     type: 'ramen',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'average'
@@ -39,7 +39,7 @@ export const restaurants = [
     id: 'surfCity',
     name: 'Surf City',
     type: 'seafood',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -48,7 +48,7 @@ export const restaurants = [
     id: 'zeppelinHall',
     name: 'Zeppelin Hall',
     type: 'barbeque',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -57,7 +57,7 @@ export const restaurants = [
     id: 'gringos',
     name: 'Gringos',
     type: 'mexican',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'average'
@@ -66,7 +66,7 @@ export const restaurants = [
     id: 'hudsonHound',
     name: 'Hudson Hound',
     type: 'irish',
-    visited: false,
+    visited: 'false',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'average'
@@ -75,7 +75,7 @@ export const restaurants = [
     id: 'loFi',
     name: 'Lo Fi',
     type: 'pizza',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -84,7 +84,7 @@ export const restaurants = [
     id: 'theBoil',
     name: 'The Boil',
     type: 'seafood',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'affordable'
@@ -93,7 +93,7 @@ export const restaurants = [
     id: 'hardGrove',
     name: 'Hard Grove',
     type: 'steakhouse',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'average'
@@ -102,7 +102,7 @@ export const restaurants = [
     id: 'hamiltonPork',
     name: 'Hamilton Pork',
     type: 'barbeque',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'average'
@@ -111,7 +111,7 @@ export const restaurants = [
     id: 'leftBank',
     name: 'Left Bank',
     type: 'burgers',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'average'
@@ -120,7 +120,7 @@ export const restaurants = [
     id: 'senHai',
     name: 'Sen Hai',
     type: 'chinese',
-    visited: true,
+    visited: 'true',
     location: 'take-out',
     alcohol: 'none',
     price: 'cheap'
@@ -129,7 +129,7 @@ export const restaurants = [
     id: 'cloveGarden',
     name: 'Clove Garden',
     type: 'indian',
-    visited: true,
+    visited: 'true',
     location: 'take-out',
     alcohol: 'none',
     price: 'average'
@@ -138,7 +138,7 @@ export const restaurants = [
     id: 'southHouse',
     name: 'South House',
     type: 'steakhouse',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'average'
@@ -147,7 +147,7 @@ export const restaurants = [
     id: 'theAshford',
     name: 'The Ashford',
     type: 'american',
-    visited: false,
+    visited: 'false',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'expensive'
@@ -156,7 +156,7 @@ export const restaurants = [
     id: 'taqueria',
     name: 'Taqueria',
     type: 'mexican',
-    visited: true,
+    visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
     price: 'average'
@@ -165,7 +165,7 @@ export const restaurants = [
     id: 'tacoria',
     name: 'Tacoria',
     type: 'mexican',
-    visited: true,
+    visited: 'true',
     location: 'take-out',
     alcohol: 'none',
     price: 'affordable'
@@ -174,7 +174,7 @@ export const restaurants = [
     id: 'graceOMalleys',
     name: 'Grace OMalleys',
     type: 'irish',
-    visited: false,
+    visited: 'false',
     location: 'dine-in',
     alcohol: 'cocktails',
     price: 'average'
@@ -183,7 +183,7 @@ export const restaurants = [
     id: 'tonyBaloneys',
     name: 'Tony Baloneys',
     type: 'pizza',
-    visited: true,
+    visited: 'true',
     location: 'take-out',
     alcohol: 'none',
     price: 'affordable'

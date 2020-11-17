@@ -17,7 +17,7 @@ const StyledRestaurantList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: ${prop => prop.visited ? '1px solid #283044' : '2px solid #F15656'};
+  border: ${prop => prop.visited === 'true' ? '1px solid #283044' : '2px solid #F15656'};
   width: 200px;
   height: 200px;
   margin-top: 20px;

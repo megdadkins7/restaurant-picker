@@ -18,6 +18,7 @@ function App() {
     location: [],
     alcohol: [],
     price: [],
+    visited: [],
   });
 
   const handleOnFiltersChange = partialFilters => {

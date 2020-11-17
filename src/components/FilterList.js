@@ -37,10 +37,11 @@ export default function FilterList({ onFiltersChange }) {
   const [locationFilter, setLocationFilter] = useState([]);
   const [alcoholFilter, setAlcoholFilter] = useState([]);
   const [priceFilter, setPriceFilter] = useState([]);
+  const [visitedFilter, setVisitedFilter] = useState([]);
 
   useEffect(() => {
-    onFiltersChange({ type: typeFilter, location: locationFilter, alcohol: alcoholFilter, price: priceFilter })
-  }, [typeFilter, locationFilter, alcoholFilter, priceFilter])
+    onFiltersChange({ type: typeFilter, location: locationFilter, alcohol: alcoholFilter, price: priceFilter, visited: visitedFilter })
+  }, [typeFilter, locationFilter, alcoholFilter, priceFilter, visitedFilter])
 
   const handleOnTypeChange = e => {
     const nextTypeFilter = e.target.value
@@ -106,6 +107,21 @@ export default function FilterList({ onFiltersChange }) {
     })
   }
 
+  const handleOnVisitedFilter = e => {
+    const nextVisitedFilter = e.target.value
+
+    setVisitedFilter(state => {
+      const currentFilterLoc = state.indexOf(nextVisitedFilter)
+      if(currentFilterLoc === -1) {
+        return [...visitedFilter, nextVisitedFilter]
+      } else {
+        return [
+          ...state.slice(0, currentFilterLoc),
+          ...state.slice(currentFilterLoc + 1, state.length)
+        ]
+      }
+    })
+  }
 
   const uniqueTypes = (x, i, array) => array.indexOf(x) === i;
   const typeCategories = restaurants.map(restaurant => restaurant.type).filter(
@@ -199,8 +215,10 @@ export default function FilterList({ onFiltersChange }) {
                 type='checkbox'
                 name='visited'
                 value={visited}
+                checked={visitedFilter.includes(visited)}
+                onChange={handleOnVisitedFilter}
               />
-              <label htmlFor='visited'>{visited ? 'visited' : 'never been'}</label>
+              <label htmlFor='visited'>{visited === 'true' ? 'visited' : 'never been'}</label>
             </div>
           ))
         }
