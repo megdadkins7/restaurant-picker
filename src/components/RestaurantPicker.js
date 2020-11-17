@@ -6,7 +6,7 @@ const StyledRestaurantPicker = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 0 10px 0;
   text-align: center;
   .RestaurantName {
     font-size: 40px;
