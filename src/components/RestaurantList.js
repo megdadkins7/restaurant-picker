@@ -17,21 +17,47 @@ const StyledRestaurantList = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: ${prop => prop.visited === 'true' ? '1px solid #283044' : '2px solid #F15656'};
+  border: ${props => props.visited === 'true' ? '1px solid #283044' : '2px solid #F15656'};
   width: 200px;
   height: 200px;
   margin-top: 20px;
   margin-right: 10px;
-  color: ${prop => prop.visited ? '#283044' : '#F15656'};
   .RestaurantName {
+    margin-bottom: 5px;
     font-size: 20px;
     font-weight: 600;
-    text-transform: uppercase
+    text-transform: uppercase;
+    color: ${props => props.visited === 'true' ? '#283044' : '#F15656'};
   }
   .RestaurantType {
-    margin-top: 5px;
+    margin: 5px;
     text-transform: uppercase;
+    color: #283044;
   }
+`;
+
+const StyledTags = styled.div`
+  display: flex;
+  margin: 10px;
+  font-size: 12px;
+`;
+
+const StyledLocation =styled.div`
+  margin: 5px 10px 0 0;
+  padding: 5px;
+  text-transform: uppercase;
+  color: ${props => props.color};
+  border: 1px solid ${props => props.color};
+  border-radius: 13px;
+;`
+
+const StyledAlcohol = styled.div`
+  margin-top: 5px;
+  padding: 5px 8px;
+  text-transform: uppercase;
+  color: ${props => props.color};
+  border: 1px solid ${props => props.color};
+  border-radius: 13px;
 `;
 
 export default function RestaurantList({ visibleRestaurants }) {
@@ -40,11 +66,13 @@ export default function RestaurantList({ visibleRestaurants }) {
     <StyledRestaurantView>
       {visibleRestaurants.map(restaurant => (
         <StyledRestaurantList visited={restaurant.visited} key={restaurant.id}>
-        <div className='RestaurantName'>{restaurant.name}</div>
-        <div className='RestaurantType'>{restaurant.type}</div>
-        <div className='RestaurantType'>{restaurant.location}</div>
-        <div className='RestaurantType'>{restaurant.alcohol}</div>
-        <div className='RestaurantType'>{transformPrice(restaurant.price)}</div>
+          <div className='RestaurantName' visited={restaurant.visited}>{restaurant.name}</div>
+          <div className='RestaurantType'>{restaurant.type}</div>
+          <div className='RestaurantType'>{transformPrice(restaurant.price)}</div>
+          <StyledTags>
+            <StyledLocation color={restaurant.locationColor}>{restaurant.location}</StyledLocation>
+            <StyledAlcohol color={restaurant.alcoholColor}>{restaurant.alcohol}</StyledAlcohol>
+          </StyledTags>
         </StyledRestaurantList>
       ))}
     </StyledRestaurantView>
