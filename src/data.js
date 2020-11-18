@@ -6,7 +6,9 @@ export const restaurants = [
     visited: 'true',
     location: 'take-out',
     alcohol: 'none',
-    price: 'cheap'
+    price: 'cheap',
+    locationColor: '#E2711D',
+    alcoholColor: '#969A97',
   },
   {
     id: 'wurstbar',
@@ -15,7 +17,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'porta',
@@ -24,7 +28,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'aniRamen',
@@ -33,7 +39,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'surfCity',
@@ -42,7 +50,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'zeppelinHall',
@@ -51,7 +61,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'gringos',
@@ -60,7 +72,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'hudsonHound',
@@ -69,7 +83,9 @@ export const restaurants = [
     visited: 'false',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'loFi',
@@ -78,7 +94,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'theBoil',
@@ -87,7 +105,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'hardGrove',
@@ -96,7 +116,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'hamiltonPork',
@@ -105,7 +127,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'leftBank',
@@ -114,7 +138,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'senHai',
@@ -123,7 +149,9 @@ export const restaurants = [
     visited: 'true',
     location: 'take-out',
     alcohol: 'none',
-    price: 'cheap'
+    price: 'cheap',
+    locationColor: '#E2711D',
+    alcoholColor: '#969A97',
   },
   {
     id: 'cloveGarden',
@@ -132,7 +160,9 @@ export const restaurants = [
     visited: 'true',
     location: 'take-out',
     alcohol: 'none',
-    price: 'average'
+    price: 'average',
+    locationColor: '#E2711D',
+    alcoholColor: '#969A97',
   },
   {
     id: 'southHouse',
@@ -141,7 +171,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'theAshford',
@@ -150,7 +182,9 @@ export const restaurants = [
     visited: 'false',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'expensive'
+    price: 'expensive',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'taqueria',
@@ -159,7 +193,9 @@ export const restaurants = [
     visited: 'true',
     location: 'dine-in',
     alcohol: 'beer',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#ffba49',
   },
   {
     id: 'tacoria',
@@ -168,7 +204,9 @@ export const restaurants = [
     visited: 'true',
     location: 'take-out',
     alcohol: 'none',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#E2711D',
+    alcoholColor: '#969A97',
   },
   {
     id: 'graceOMalleys',
@@ -177,7 +215,9 @@ export const restaurants = [
     visited: 'false',
     location: 'dine-in',
     alcohol: 'cocktails',
-    price: 'average'
+    price: 'average',
+    locationColor: '#00B4D8',
+    alcoholColor: '#8436c8',
   },
   {
     id: 'tonyBaloneys',
@@ -186,11 +226,11 @@ export const restaurants = [
     visited: 'true',
     location: 'take-out',
     alcohol: 'none',
-    price: 'affordable'
+    price: 'affordable',
+    locationColor: '#E2711D',
+    alcoholColor: '#969A97',
   }
 ]
-
-
 export const transformPrice = (restaurants) => {
   switch(restaurants) {
     case 'cheap':
