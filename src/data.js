@@ -195,15 +195,13 @@ export const transformPrice = (restaurants) => {
   switch(restaurants) {
     case 'cheap':
         return '$';
-        break;
       case 'affordable':
         return '$$';
-        break;
       case 'average':
         return '$$$';
-        break;
       case 'expensive':
         return '$$$$';
-        break;
+      default: 
+        return '$$$$$'
   }
 }
