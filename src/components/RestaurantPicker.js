@@ -37,7 +37,7 @@ export default function RestaurantPicker({ getRestaurant, restaurant }) {
   return (
     <StyledRestaurantPicker>
       <div className='RestaurantName'>You're going to {restaurant} </div>
-      <button className='EatButton' onClick={() => getRestaurant()}>Eat It!</button>
+      <button className='EatButton' onClick={getRestaurant}>Eat It!</button>
     </StyledRestaurantPicker>
   )
 }
