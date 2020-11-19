@@ -69,7 +69,7 @@ function App() {
       <GlobalStyles />
       <RestaurantPicker restaurant={restaurant} getRestaurant={getRestaurant} />
       <FilterList onFiltersChange={handleOnFiltersChange} restaurants={restaurants} />
-      <RestaurantList visibleRestaurants={visibleRestaurants} />
+      <RestaurantList selectedRestaurant={restaurant} visibleRestaurants={visibleRestaurants} />
     </>
   );
 }
